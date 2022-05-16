@@ -18,7 +18,7 @@ func main() {
 		4, 3, 5,
 		5, 3, 4}
 
-	for horizontalCheck == true || verticalCheck == true {
+	for horizontalCheck == true && verticalCheck == true {
 
 		fmt.Println("This is the current game-board:")
 		var i = 0
@@ -32,36 +32,33 @@ func main() {
 
 		fmt.Println("For selecting the first item enter a number from 0 to 8")
 
-		reader := bufio.NewReader(os.Stdin)
-		first_item_string, err := reader.ReadString('\n')
+		var first_selection = userInputReader()
 
-		// remove the \n
-		first_item_string = strings.TrimSuffix(first_item_string, "\n")
+		var first_item = game_field[first_selection]
 
-		// convert string to int
-		first_item_int, err := strconv.Atoi(first_item_string)
-		_ = err
+		fmt.Println("For selecting the second item enter a number from 0 to 8")
 
-		var first_item = game_field[first_item_int]
+		var second_selection = userInputReader()
 
-		fmt.Println("For selecting the first item enter a number from 0 to 8")
-
-		readertwo := bufio.NewReader(os.Stdin)
-		second_item_string, err := readertwo.ReadString('\n')
-
-		// remove the \n
-		second_item_string = strings.TrimSuffix(second_item_string, "\n")
-
-		// convert string to int
-		second_item_int, err := strconv.Atoi(second_item_string)
-		_ = err
-
-		var second_item = game_field[second_item_int]
+		var second_item = game_field[second_selection]
 
 		// switching values
-		game_field[first_item_int] = second_item
-		game_field[second_item_int] = first_item
+		game_field[first_selection] = second_item
+		game_field[second_selection] = first_item
 	}
+}
+
+func userInputReader() int {
+	reader := bufio.NewReader(os.Stdin)
+	item_string, err := reader.ReadString('\n')
+
+	// remove the \n
+	item_string = strings.TrimSuffix(item_string, "\n")
+
+	// convert string to int
+	item_int, err := strconv.Atoi(item_string)
+	_ = err
+	return item_int
 }
 
 func checkThreeInHorizontal(left_gem int, middle_gem int, right_gem int) bool {
