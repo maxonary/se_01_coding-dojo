@@ -87,6 +87,20 @@ func checkThreeInVertical(upper_gem int, middle_upper_gem int, middle_lower_gem 
 	}
 }
 
+func checkForPattern(upper_gem int, middle_upper_gem int, middle_lower_gem int, lower_gem int) bool {
+	if upper_gem/middle_upper_gem == 1 && upper_gem/middle_lower_gem == 1 && middle_upper_gem/middle_lower_gem == 1 {
+		fmt.Println("Pattern is L")
+		return false
+
+	if lower_gem/middle_upper_gem == 1 && lower_gem/middle_lower_gem == 1 && middle_upper_gem/middle_lower_gem == 1 {
+		fmt.Println("Pattern is T")
+		return false
+			
+	} else {
+		return true
+	}
+}
+
 func inputIsLegal(item int) []int {
 
 	if item == 0 {
