@@ -11,7 +11,7 @@ Run the programm in commandline with the following scheme
 ```go run filename.go```
 
 ## Game description 
-This game is known under a few different names: Bejweled, Candy Crush, ... The basic mode of play is always the same: The players move is to swap the position of two gems. If one of the gems now forms a line (horizontal or vertical) of 3 same-colored gems the move is legal, and the newly formed row is removed.
+This game is known under a few different names: Bejweled, Candy Crush, ... The basic mode of play is always the same: The players move is to swap the position of two gems. If one of the gems now forms a line (horizontal or vertical) of 3 same-colored gems the move is legal, and the newly formed row is removed. ⒸcodeFabio
 
 ## Folder layout
 `task_one` contains a game of a 3 by 3 grid with 5 different value types
