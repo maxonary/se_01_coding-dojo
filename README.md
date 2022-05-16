@@ -17,3 +17,5 @@ This game is known under a few different names: Bejweled, Candy Crush, ... The b
 `task_one` contains a game of a 3 by 3 grid with 5 different value types
 
 `task_two` is similar to `task_one` but  contains a game of a 4 by 4 grid
+
+`task_two` is similar to `task_two` but  was not completed
