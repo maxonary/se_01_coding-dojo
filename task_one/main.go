@@ -36,7 +36,9 @@ func main() {
 
 		var first_item = game_field[first_selection]
 
-		fmt.Println("For selecting the second item enter a number from 0 to 8")
+		var second_legal = inputIsLegal(first_selection)
+
+		fmt.Println("For selecting the second item enter a number from \n", second_legal)
 
 		var second_selection = userInputReader()
 
@@ -80,4 +82,47 @@ func checkThreeInVertical(upper_gem int, middle_gem int, lower_gem int) bool {
 	} else {
 		return true
 	}
+}
+
+func inputIsLegal(item int) []int {
+
+	if item == 0 {
+		allowed := []int{1, 3}
+		return allowed
+	}
+	if item == 1 {
+		allowed := []int{0, 2, 4}
+		return allowed
+	}
+	if item == 2 {
+		allowed := []int{1, 5}
+		return allowed
+	}
+	if item == 3 {
+		allowed := []int{0, 5, 6}
+		return allowed
+	}
+	if item == 4 {
+		allowed := []int{1, 3, 5, 7}
+		return allowed
+	}
+	if item == 5 {
+		allowed := []int{2, 4, 8}
+		return allowed
+	}
+	if item == 6 {
+		allowed := []int{3, 7}
+		return allowed
+	}
+	if item == 7 {
+		allowed := []int{4, 6, 8}
+		return allowed
+	}
+	if item == 8 {
+		allowed := []int{5, 7}
+		return allowed
+	} else {
+		return []int{0}
+	}
+
 }

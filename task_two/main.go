@@ -37,7 +37,9 @@ func main() {
 
 		var first_item = game_field[first_selection]
 
-		fmt.Println("For selecting the second item enter a number from 0 to 15")
+		var second_legal = inputIsLegal(first_selection)
+
+		fmt.Println("For selecting the second item enter a number from \n", second_legal)
 
 		var second_selection = userInputReader()
 
@@ -83,4 +85,75 @@ func checkThreeInVertical(upper_gem int, middle_upper_gem int, middle_lower_gem 
 	} else {
 		return true
 	}
+}
+
+func inputIsLegal(item int) []int {
+
+	if item == 0 {
+		allowed := []int{1, 4}
+		return allowed
+	}
+	if item == 1 {
+		allowed := []int{0, 2, 5}
+		return allowed
+	}
+	if item == 2 {
+		allowed := []int{1, 2, 6}
+		return allowed
+	}
+	if item == 3 {
+		allowed := []int{2, 7}
+		return allowed
+	}
+	if item == 4 {
+		allowed := []int{0, 5, 8}
+		return allowed
+	}
+	if item == 5 {
+		allowed := []int{1, 4, 6, 9}
+		return allowed
+	}
+	if item == 6 {
+		allowed := []int{2, 5, 7, 10}
+		return allowed
+	}
+	if item == 7 {
+		allowed := []int{3, 6, 11}
+		return allowed
+	}
+	if item == 8 {
+		allowed := []int{4, 9, 12}
+		return allowed
+	}
+	if item == 9 {
+		allowed := []int{5, 8, 10, 13}
+		return allowed
+	}
+	if item == 10 {
+		allowed := []int{6, 9, 11, 14}
+		return allowed
+	}
+	if item == 11 {
+		allowed := []int{7, 10, 15}
+		return allowed
+	}
+	if item == 12 {
+		allowed := []int{8, 13}
+		return allowed
+	}
+	if item == 13 {
+		allowed := []int{12, 9, 14}
+		return allowed
+	}
+	if item == 14 {
+		allowed := []int{13, 10, 15}
+		return allowed
+	}
+	if item == 15 {
+		allowed := []int{11, 14}
+		return allowed
+	} else {
+		return []int{0}
+	}
+
 }
